@@ -39,7 +39,7 @@
     "verify:supabase": "node scripts/verify-supabase.cjs",
     "verify:supabase-ui": "node scripts/verify-supabase-ui.cjs",
     "verify:live-wallet": "node scripts/verify-live-wallet.cjs",
-    "verify:walletconnect": "node --test scripts/verify-walletconnect.cjs",
+    "verify:walletconnect": "node --test scripts/verify-walletconnect.cjs scripts/verify-wallet-transfers.cjs",
     "verify:walletconnect-ui": "node scripts/verify-walletconnect-ui.cjs"
   },
   "devDependencies": {

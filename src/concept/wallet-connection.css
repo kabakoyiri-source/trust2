@@ -4,34 +4,17 @@
 .connection-header h1 { font-size: 16px; line-height: 22px; text-align: center; font-weight: 600; }
 .connection-header .reference-round { width: 42px; height: 42px; }
 .connection-content { flex: 1; min-height: 0; overflow-y: auto; padding: 12px 20px calc(env(safe-area-inset-bottom,0px) + 24px); }
-.connection-identity { display: flex; align-items: center; gap: 12px; }
-.connection-identity > img { flex-shrink: 0; border-radius: 12px; }
-.connection-identity > div { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
-.connection-identity strong { font-size: 19px; }
-.connection-identity span { font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
-.connection-mode { display: inline-block; font-size: 11px; line-height: 17px; margin-top: 16px; padding: 5px 9px; border-radius: 100px; color: var(--muted); background: var(--surface); }
-.connection-intro { margin-top: 12px; font-size: 13px; color: var(--muted); line-height: 20px; }
-.connection-network { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 18px 0 14px; }
-.connection-network .asset-icon-art { width: 22px; height: 22px; }
-.connection-network strong { font-size: 14px; }
-.connection-network > span:last-child { font-size: 11px; color: var(--muted); margin-left: auto; }
 .connection-code { display: grid; place-items: center; max-width: 340px; margin: 0 auto 16px; min-height: 190px; border: 1px solid var(--border); border-radius: 20px; background: var(--surface); overflow: hidden; }
 .connection-code.has-code { aspect-ratio: 1; background: #fff; }
 .connection-code > img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .connection-placeholder { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 24px; text-align: center; }
 .connection-placeholder > svg { width: 34px; height: 34px; color: #6559ee; }
 .connection-placeholder strong { font-size: 16px; }
-.connection-placeholder p { color: var(--muted); font-size: 12px; line-height: 18px; }
 .connection-expiry { text-align: center; font-size: 12px; color: var(--muted); margin-bottom: 16px; }
 .connection-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .connection-actions .soft { padding: 12px 8px; font-size: 12px; }
 .connection-content > .text-button { display: block; margin: 8px auto 0; }
 .connection-error { margin: 12px 0; color: var(--red); font-size: 13px; line-height: 20px; }
-.connection-permissions { display: flex; align-items: flex-start; gap: 8px; margin-top: 20px; padding: 12px; border-radius: 14px; background: var(--surface); }
-.connection-permissions > svg { flex-shrink: 0; margin-top: 2px; width: 16px; height: 16px; color: var(--green); }
-.connection-permissions p,.connection-footer { font-size: 11px; line-height: 18px; color: var(--muted); }
-.connection-footer { margin-top: 14px; text-align: center; overflow-wrap: anywhere; }
-.connection-license,.connection-license a { font-size: 9px; line-height: 15px; color: var(--muted); }
 .connection-config { margin-bottom: 18px; padding: 16px; border: 1px solid var(--border); border-radius: 18px; }
 .connection-config label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 10px; }
 .connection-config input { padding: 13px 12px; font-size: 14px; border-radius: 12px; }
@@ -39,7 +22,7 @@
 .connection-config .connection-error { color: var(--red); }
 .connection-config a { display: inline-flex; gap: 6px; align-items: center; font-size: 12px; color: #6559ee; margin: 0 0 14px; }
 .connection-config a > svg { width: 13px; height: 13px; }
-.connection-account { margin: 22px 0; padding: 20px 16px; border-radius: 20px; border: 1px solid var(--border); }
+.connection-account { margin: 0 0 16px; padding: 20px 16px; border-radius: 20px; border: 1px solid var(--border); }
 .connection-success { display: inline-flex; align-items: center; gap: 6px; color: var(--green); font-size: 12px; }
 .connection-account h2 { margin-top: 12px; font-size: 20px; overflow-wrap: anywhere; }
 .connection-account > p { color: var(--muted); font-size: 12px; margin-top: 6px; }
@@ -47,10 +30,33 @@
 .connection-address > code { flex: 1; min-width: 0; overflow-wrap: anywhere; font-size: 12px; line-height: 20px; }
 .connection-address > button { display: grid; place-items: center; flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; background: var(--surface); }
 .connection-address svg { width: 17px; height: 17px; }
+.connection-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 0 18px; }
+.connection-tabs > button { display: flex; justify-content: center; align-items: center; gap: 8px; padding: 12px 6px; border-radius: 12px; background: var(--surface); font-size: 14px; }
+.connection-tabs > button[aria-pressed="true"] { color: #fff; background: #4930ff; }
+.connection-field { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; font-size: 14px; font-weight: 500; }
+.connection-field input,.connection-field select { width: 100%; min-width: 0; padding: 14px 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); font: inherit; font-size: 16px; }
+.connection-field select { appearance: none; padding-right: 34px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23858b9a' stroke-width='2'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+.connection-balance { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
+.connection-balance button { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--surface); }
+.connection-receive { margin-top: 16px; text-align: center; }
+.connection-receive > p { font-size: 14px; line-height: 21px; color: var(--muted); margin-bottom: 16px; }
+.connection-receive .soft { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.connection-review { margin-top: 20px; }
+.connection-review h3,.connection-submitted h3 { font-size: 18px; line-height: 25px; }
+.connection-review dl { margin: 16px 0; }
+.connection-review dl > div { display: flex; flex-direction: column; gap: 6px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.connection-review dt { color: var(--muted); }
+.connection-review dd { margin: 0; overflow-wrap: anywhere; }
+.connection-review > p,.connection-submitted p { font-size: 14px; line-height: 21px; color: var(--muted); margin-bottom: 16px; }
+.connection-review .text-button,.connection-disconnect { display: block; margin: 12px auto 0; font-size: 14px; }
+.connection-submitted { padding: 24px 0 12px; text-align: center; }
+.connection-submitted > svg { color: var(--green); width: 32px; height: 32px; margin-bottom: 12px; }
+.connection-submitted > a { display: inline-flex; gap: 6px; align-items: center; color: #6559ee; font-size: 14px; margin-bottom: 20px; }
+.connection-account button:disabled { opacity: .55; }
 .receive-wallet-connect { display: flex; width: 100%; align-items: center; gap: 10px; padding: 13px 14px; margin: 10px 0 20px; border-radius: 16px; background: var(--surface); text-align: left; }
 .receive-wallet-connect > svg { width: 22px; height: 22px; color: #6559ee; flex-shrink: 0; }
 .receive-wallet-connect > svg:last-child { width: 17px; height: 17px; margin-left: auto; color: var(--muted); }
 .receive-wallet-connect strong { font-size: 13px; font-weight: 600; display: block; }
 .receive-wallet-connect small { display: block; color: var(--muted); margin-top: 3px; font-size: 11px; }
 @media (orientation:landscape) and (max-height:500px) { .connection-code { max-width: min(280px,calc(100dvh - 100px)); } }
-@media (max-width:360px) { .connection-header { padding-inline: 12px; gap: 5px; }.connection-header h1 { font-size: 14px; }.connection-content { padding-inline: 16px; }.connection-network > span:last-child { width: 100%; margin-left: 29px; } }
+@media (max-width:360px) { .connection-header { padding-inline: 12px; gap: 5px; }.connection-header h1 { font-size: 14px; }.connection-content { padding-inline: 16px; } }

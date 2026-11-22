@@ -20,7 +20,7 @@ export default function ReceivePanel({asset,assets,wallet,addresses,onAddress,on
     <header className="receive-header"><button className="receive-close" aria-label="Retour" onClick={onClose}><FiX/></button><h1 id="receive-title">Receive {asset.symbol}</h1><span/></header>
     <div className="receive-body">
       <button className="receive-network" onClick={()=>setPicker(true)} aria-label="Choisir la crypto à recevoir"><span><TokenArtwork id={networkIcon}/></span>{asset.network}</button>
-      {onConnect&&connectionAvailable(asset)&&<button className="receive-wallet-connect" aria-label="Connecter mon portefeuille" onClick={onConnect}><FiLink/><span><strong>Connecter mon portefeuille</strong><small>WalletConnect · Ethereum · Lecture seule</small></span><FiChevronRight/></button>}
+      {onConnect&&connectionAvailable(asset)&&<button className="receive-wallet-connect" aria-label="Connecter mon portefeuille" onClick={onConnect}><FiLink/><span><strong>Connecter mon portefeuille</strong><small>WalletConnect · Ethereum</small></span><FiChevronRight/></button>}
       <div className="receive-qr-card">
         <div className="receive-qr-art">{qr.src?<><img src={qr.src} alt={`QR de réception ${asset.symbol} : ${address}`} data-testid="receive-qr"/><span className="receive-qr-logo"><span style={{background:asset.color}}><AssetIcon asset={asset}/></span></span></>:<button className="receive-qr-empty" onClick={editAddress}><FiPlus/><span>{qr.loading?'Génération du QR…':address?`Adresse non valide pour ${asset.network}`:`Renseigner une adresse ${asset.network}`}</span></button>}</div>
         <button className="receive-address" aria-label="Modifier l’adresse affichée" onClick={editAddress}>{address||'Renseigner une adresse'}</button>
